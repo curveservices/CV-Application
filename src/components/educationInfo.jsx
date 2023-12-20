@@ -17,18 +17,21 @@ const EducationInfo = ({ onSubmit, data}) => {
         <section className="form">
             {editMode ? (
                 <form>
-                    <h2 className="title">Education</h2>
+                    <div className="title-container">
+                        <i className="fa-solid fa-graduation-cap"></i>
+                        <h2 className="title">Education</h2>
+                    </div>
                     <label htmlFor="school">School: </label>
                     <input
                     type='text'
                     id='school'
-                    placeholder="School"
+                    placeholder="Enter school name"
                     onChange={(e) => setSchoolName(e.target.value)}/>
-                    <label htmlFor="degree">Degree: </label>
+                    <label htmlFor="degree">Qualification: </label>
                     <input
                     type='text'
                     id='degree'
-                    placeholder="Qualification"
+                    placeholder="Enter qualification"
                     onChange={(e) => setTitleName(e.target.value)} />
                     <label htmlFor="start-date">Start Date: </label>
                     <input
@@ -51,12 +54,15 @@ const EducationInfo = ({ onSubmit, data}) => {
                 </form>
             ) : (
                 <section className="edit-section">
-                    <h2 className="preview-title">Education</h2>
-                    <p>{name}</p>
-                    <p>{title}</p>
-                    <p>{startDate}</p>
-                    <p>{endDate}</p>
-                    <p>{location}</p>
+                    <div className="title-container">
+                        <i className="fa-solid fa-graduation-cap"></i>
+                        <h2 className="title">Education</h2>
+                    </div>
+                    <p>School: {name}</p>
+                    <p>Qualification: {title}</p>
+                    <p>Start Date: {startDate}</p>
+                    <p>End Date: {endDate}</p>
+                    <p>Location: {location}</p>
                     <button onClick={(e) => setEditMode(true)}>Edit</button>
                 </section>
             )}

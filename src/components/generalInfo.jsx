@@ -24,12 +24,12 @@ const GeneralInfo = ({onSubmit, data}) => {
                     id='name'
                     placeholder="Enter full name"
                     onChange={(e) => setName(e.target.value)} />
-                    <label htmlFor="email">Email address: </label>
+                    <label htmlFor="email">Email: </label>
                     <input 
                     type="text" 
                     id='email' placeholder="Enter email address" 
                     onChange={(e) => setEmail(e.target.value)} />
-                    <label htmlFor="phone">Phone number: </label>
+                    <label htmlFor="phone">Phone: </label>
                     <input 
                     type="number" 
                     id='phone' placeholder="Enter phone number" 
@@ -38,18 +38,19 @@ const GeneralInfo = ({onSubmit, data}) => {
                     <input 
                     type="text" 
                     id='address' 
-                    placeholder="Enter address" 
+                    placeholder="City, Country" 
                     onChange={(e) => setAddress(e.target.value)} />
                     <button onClick={handleSubmit}>Submit</button>
                 </form>
             ) : (
                 <section className="edit-section">
-                <p>{name}</p>
-                <p>{email}</p>
-                <p>{phone}</p>
-                <p>{address}</p>
+                <h2 className="title">Personal Details</h2>
+                <p>Name: {name}</p>
+                <p>Email: {email}</p>
+                <p>Phone: {phone}</p>
+                <p>Address: {address}</p>
                 <button onClick={() => setEditMode(true)}>
-                <i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                <i className="fa-regular fa-pen-to-square"></i> Edit</button>
               </section>
 
             )}

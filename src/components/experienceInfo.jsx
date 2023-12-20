@@ -18,25 +18,28 @@ const ExperienceInfo = ({ onSubmit, data}) => {
        <section className="form">
            {editMode ? (
                <form>
-                   <h2 className="title">Experience</h2>
-                   <label htmlFor="company-name">Company Name: </label>
+                   <div className="title-container">
+                   <i className="fa-solid fa-briefcase"></i>
+                    <h2 className="title">Experience</h2>
+                    </div>
+                   <label htmlFor="company-name">Company name: </label>
                    <input
                    type="text"
                    id="company-name"
                    placeholder="Enter company name"
                    onChange={(e) => setName(e.target.value)} />
-                   <label htmlFor="position">Posistion Title: </label>
+                   <label htmlFor="position">Position title: </label>
                    <input
                    type="text"
                    id="position"
                    placeholder="Enter position title"
                    onChange={(e) => setPosition(e.target.value)} />
-                   <label htmlFor="start-date">Start Date: </label>
+                   <label htmlFor="start-date">Start date: </label>
                    <input
                    type='date'
                    id="start-date"
                    onChange={(e) => setStartDate(e.target.value) } />
-                   <label htmlFor="end-date">End Date: </label>
+                   <label htmlFor="end-date">End date: </label>
                    <input
                    type='date'
                    id="end-date"
@@ -57,12 +60,15 @@ const ExperienceInfo = ({ onSubmit, data}) => {
                </form>
            ) : (
             <section className="edit-section">
-                <h2 className="preview-title">Experience</h2>
-                <p>{name}</p>
-                <p>{position}</p>
-                <p>{startDate}</p>
-                <p>{endDate}</p>
-                <p>{description}</p>
+                <div className="title-container">
+                    <i className="fa-solid fa-briefcase"></i>
+                    <h2 className="title">Experience</h2>
+                </div>
+                <p>Company name: {name}</p>
+                <p>Position: {position}</p>
+                <p>Start date: {startDate}</p>
+                <p>End date: {endDate}</p>
+                <p>Description: {description}</p>
                 <button onClick={(e) => setEditMode(true)}>Edit</button>
             </section>
            )}

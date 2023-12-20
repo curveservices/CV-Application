@@ -2,37 +2,35 @@ import React from 'react';
 
 const CVDisplay = ({ generalInfo, educationInfo, experienceInfo }) => {
   return (
-    <section className='display'>
-      <h2>General Information</h2>
-        <section className="edit-section">
-            <p>{generalInfo.name}</p>
-            <p>{generalInfo.email}</p>
-            <p>{generalInfo.phone}</p>
-            <p>{generalInfo.address}</p>
+    <article className='display'>
+
+        <h2 className='title'>{generalInfo.name}</h2>
+        <section className='display-general'>
+            <p><i className="fa-solid fa-envelope"></i> {generalInfo.email}</p>
+            <p><i className="fa-solid fa-phone"></i> {generalInfo.phone}</p>
+            <p><i className="fa-solid fa-location-dot"></i> {generalInfo.address}</p>
         </section>
 
-      <h2>Education</h2>
-      {educationInfo.map((education, index) => (
-        <div key={index}>
-            <p>{education.name}</p>
-            <p>{education.title}</p>
-            <p>{education.startDate}</p>
-            <p>{education.endDate}</p>
-            <p>{education.location}</p>
-        </div>
-      ))}
+        <div className='display-ed-ex'>
+            <h3 className='title'>Education</h3>
+            <section className='display-section'>
+                <p><b>{educationInfo.name}</b></p>
+                <p>{educationInfo.title}</p>
+                <p>{educationInfo.startDate}</p>
+                <p>{educationInfo.endDate}</p>
+                <p>{educationInfo.location}</p>
+            </section>
 
-      <h2>Professional Experience</h2>
-      {experienceInfo.map((experience, index) => (
-        <div key={index}>
-        <p>{experience.name}</p>
-        <p>{experience.position}</p>
-        <p>{experience.startDate}</p>
-        <p>{experience.endDate}</p>
-        <p>{experience.description}</p>
+            <h3 className='title'>Professional Experience</h3>
+            <section className='display-section'>
+                <p><b>{experienceInfo.name}</b></p>
+                <p>{experienceInfo.position}</p>
+                <p>{experienceInfo.startDate}</p>
+                <p>{experienceInfo.endDate}</p>
+                <p>{experienceInfo.description}</p>
+            </section>
         </div>
-      ))}
-    </section>
+    </article>
   );
 };
 

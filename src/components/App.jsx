@@ -29,10 +29,14 @@ function App() {
   return (
     <>
       <CreateHeader />
-      <GeneralInfo onSubmit={handleGeneralInfoSubmit} data={generalInfo} />
-      <EducationInfo onSubmit={handleEducationInfoSubmit} data={educationInfo} />
-      <ExperienceInfo onSubmit={handleExperienceInfoSubmit} data={experienceInfo} />
-      <CVDisplay generalInfo={generalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo} />
+      <main>
+        <section className='side-bar'>
+          <GeneralInfo onSubmit={handleGeneralInfoSubmit} data={generalInfo} />
+          <EducationInfo onSubmit={handleEducationInfoSubmit} data={educationInfo} />
+          <ExperienceInfo onSubmit={handleExperienceInfoSubmit} data={experienceInfo} />
+        </section>
+        <CVDisplay generalInfo={generalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo} />
+      </main>
     </>
   );
 };
