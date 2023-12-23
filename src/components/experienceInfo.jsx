@@ -17,7 +17,7 @@ const ExperienceInfo = ({ onSubmit, data}) => {
     return (
        <section className="form">
            {editMode ? (
-               <form>
+               <form action="#">
                    <div className="title-container">
                    <i className="fa-solid fa-briefcase"></i>
                     <h2 className="title">Experience</h2>
@@ -36,13 +36,15 @@ const ExperienceInfo = ({ onSubmit, data}) => {
                    onChange={(e) => setPosition(e.target.value)} />
                    <label htmlFor="start-date">Start date: </label>
                    <input
-                   type='date'
+                   type='text'
                    id="start-date"
+                   placeholder="Enter start date"
                    onChange={(e) => setStartDate(e.target.value) } />
                    <label htmlFor="end-date">End date: </label>
                    <input
-                   type='date'
+                   type='text'
                    id="end-date"
+                   placeholder="Enter end date"
                    onChange={(e) => setEndDate(e.target.value) } />
                    <label htmlFor="location">Location: </label>
                    <input 
@@ -51,11 +53,12 @@ const ExperienceInfo = ({ onSubmit, data}) => {
                     placeholder="City, Country"
                     onChange={(e) => setLocation(e.target.value)} />
                    <label htmlFor="description">Description: </label>
-                   <input 
-                   type="text-area" rows='10'
-                   id="description"
-                   placeholder="Enter description"
-                   onChange={(e) => setDescription(e.target.value)} />
+                   <textarea
+                    rows='2'
+                    cols='5'
+                    id="description"
+                    placeholder="Enter description"
+                    onChange={(e) => setDescription(e.target.value)} />
                    <button onClick={handleSubmit}>Submit</button>
                </form>
            ) : (
@@ -68,8 +71,10 @@ const ExperienceInfo = ({ onSubmit, data}) => {
                 <p>Position: {position}</p>
                 <p>Start date: {startDate}</p>
                 <p>End date: {endDate}</p>
+                <p>Location: {location}</p>
                 <p>Description: {description}</p>
-                <button onClick={(e) => setEditMode(true)}>Edit</button>
+                <button onClick={(e) => setEditMode(true)}>
+                <i className="fa-solid fa-pen-to-square"></i> Add</button>
             </section>
            )}
        </section>

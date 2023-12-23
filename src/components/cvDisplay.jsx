@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const CVDisplay = ({ generalInfo, educationInfo, experienceInfo }) => {
+
   return (
     <article className='display'>
 
@@ -11,25 +12,36 @@ const CVDisplay = ({ generalInfo, educationInfo, experienceInfo }) => {
             <p><i className="fa-solid fa-location-dot"></i> {generalInfo.address}</p>
         </section>
 
-        <div className='display-ed-ex'>
-            <h3 className='title'>Education</h3>
-            <section className='display-section'>
-                <p><b>{educationInfo.name}</b></p>
-                <p>{educationInfo.title}</p>
-                <p>{educationInfo.startDate}</p>
-                <p>{educationInfo.endDate}</p>
-                <p>{educationInfo.location}</p>
+        <h3 className="title">Education</h3>
+        {educationInfo.map((education, index) => 
+            <section  className="display-section" key={index}>
+                <div>
+                    <p className="info">{education.startDate} to {education.endDate}</p>
+                    <p className="info">{education.location}</p>
+                </div>
+                <div>
+                    <p className="info"><b>{education.name}</b></p>
+                    <p className="info">{education.title}</p>
+                </div>
+             
             </section>
+        )}
 
-            <h3 className='title'>Professional Experience</h3>
-            <section className='display-section'>
-                <p><b>{experienceInfo.name}</b></p>
-                <p>{experienceInfo.position}</p>
-                <p>{experienceInfo.startDate}</p>
-                <p>{experienceInfo.endDate}</p>
-                <p>{experienceInfo.description}</p>
-            </section>
+        <h3 className='title'>Professional Experience</h3>
+        {experienceInfo.map((experience, index) => 
+        <div className='display-section' key={index}>
+            <div>
+                <p className="info">{experience.startDate} to {experience.endDate}</p>
+                <p className="info">{experience.location}</p>
+            </div>
+            <div>
+                <p className="info"><b>{experience.name}</b></p>
+                <p className="info">{experience.position}</p>
+                <p className="info">{experience.description}</p>
+            </div>
+            
         </div>
+        )}
     </article>
   );
 };

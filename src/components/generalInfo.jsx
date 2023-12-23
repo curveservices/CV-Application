@@ -16,7 +16,7 @@ const GeneralInfo = ({onSubmit, data}) => {
     return (
         <section className="form">
             {editMode ? (
-                <form>
+                <form action="#">
                     <h2 className="title">Personal Details</h2>
                     <label htmlFor="name" >Full Name: </label>
                     <input 

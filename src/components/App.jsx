@@ -14,16 +14,17 @@ function App() {
   const [educationInfo, setEducationInfo] = useState([]);
   const [experienceInfo, setExperienceInfo] = useState([]);
 
+
   const handleGeneralInfoSubmit = (data) => {
     setGeneralInfo(data);
   };
 
   const handleEducationInfoSubmit = (data) => {
-    setEducationInfo([educationInfo,data]);
+    setEducationInfo([ educationInfo, data ]);
   };
 
   const handleExperienceInfoSubmit = (data) => {
-    setExperienceInfo([...experienceInfo, data]);
+    setExperienceInfo([experienceInfo, data]);
   };
 
   return (

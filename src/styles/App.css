@@ -70,26 +70,47 @@ input {
 
 .title-container {
   display: flex;
-  justify-content: c;
-  gap: 1em;
+  justify-content: center;
   align-items: center;
+  gap: 1em;
 }
 
 .display {
   margin: 1em;
-  border-radius: 8px;
+  padding: 1.2em;
   box-shadow: var(--box-shadow); 
+  border-radius: 10px;
 }
 
 .display-general {
   display: flex;
-  justify-content: center;
-  gap: 1em;
-
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .title {
   text-align: center;
+}
+
+.display-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  max-width: 10em;
 }
 
 

@@ -16,7 +16,7 @@ const EducationInfo = ({ onSubmit, data}) => {
     return (
         <section className="form">
             {editMode ? (
-                <form>
+                <form action="#">
                     <div className="title-container">
                         <i className="fa-solid fa-graduation-cap"></i>
                         <h2 className="title">Education</h2>
@@ -35,14 +35,15 @@ const EducationInfo = ({ onSubmit, data}) => {
                     onChange={(e) => setTitleName(e.target.value)} />
                     <label htmlFor="start-date">Start Date: </label>
                     <input
-                    type='date'
+                    type='text'
                     id='start-date'
+                    placeholder="Enter start date"
                     onChange={(e) => setStartDate(e.target.value)} />
                     <label htmlFor="end-date">End Date: </label>
                     <input
-                    type='date'
+                    type='text'
                     id='end-date'
-                    placeholder="Select date"
+                    placeholder="Enter end date"
                     onChange={(e) => setEndDate(e.target.value)} />
                     <label htmlFor="location">Location: </label>
                     <input 
@@ -63,7 +64,8 @@ const EducationInfo = ({ onSubmit, data}) => {
                     <p>Start Date: {startDate}</p>
                     <p>End Date: {endDate}</p>
                     <p>Location: {location}</p>
-                    <button onClick={(e) => setEditMode(true)}>Edit</button>
+                    <button onClick={(e) => setEditMode(true)}>
+                    <i className="fa-solid fa-pen-to-square"></i> Add</button>
                 </section>
             )}
         </section>
