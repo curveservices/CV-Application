@@ -75,6 +75,11 @@ input {
   gap: 1em;
 }
 
+.button-container {
+  display: flex;
+  gap: 2em;
+}
+
 .display {
   margin: 1em;
   padding: 1.2em;
