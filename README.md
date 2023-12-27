@@ -13,7 +13,7 @@
 
 - 
 
-## Obejective
+## Objective
 
 1. Structure your application into components the application should include:
 - A section to add general information like name, email and phone number.

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import '../styles/generalInfo.css'
 
 const GeneralInfo = ({onSubmit, data}) => {
     const [editMode, setEditMode] = useState(true);
